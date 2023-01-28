@@ -1,7 +1,5 @@
-import { useContext, useEffect, useState } from 'react';
 import { Container } from './styles';
-import api from '../../services/api';
-import TransactionsContext from '../../context/transactions';
+import { useTransactions } from '../../hooks/context/transactions';
 
 interface Transaction {
   id: number;
@@ -13,7 +11,7 @@ interface Transaction {
 }
 
 export function TransactionsTable() {
-  const { transactions } = useContext(TransactionsContext);
+  const { transactions } = useTransactions();
 
   return (
     <Container>
